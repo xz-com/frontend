@@ -8,13 +8,12 @@ import { routeTree } from "./routeTree.gen";
 import "./styles.css";
 import reportWebVitals from "./reportWebVitals.ts";
 import { Toaster } from "./components/ui/toaster";
-import { AuthInitializer } from "./lib/auth-initializer";
 import { ThemeProvider } from "./components/theme-provider";
+import { AuthProvider } from "./lib/auth-context";
 
 // Create a new router instance
 export const router = createRouter({
   routeTree,
-  context: {},
   defaultPreload: "intent",
   scrollRestoration: true,
   defaultStructuralSharing: true,
@@ -34,10 +33,10 @@ if (rootElement && !rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <ThemeProvider defaultTheme="system" storageKey="acme-theme">
-        <AuthInitializer>
+        <AuthProvider>
           <RouterProvider router={router} />
           <Toaster />
-        </AuthInitializer>
+        </AuthProvider>
       </ThemeProvider>
     </StrictMode>
   );

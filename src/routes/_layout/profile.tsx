@@ -1,19 +1,18 @@
-import { createFileRoute, Navigate } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useAuthStore } from "@/lib/auth-store";
+import { authGuard } from "@/lib/auth-context";
 
 export const Route = createFileRoute("/_layout/profile")({
+  // Добавляем проверку авторизации перед загрузкой роута
+  beforeLoad: () => {
+    // Проверяем, авторизован ли пользователь
+    authGuard();
+  },
   component: ProfilePage,
 });
 
 function ProfilePage() {
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-  const isLoading = useAuthStore((state) => state.isLoading);
   const user = useAuthStore((state) => state.user);
-
-  // Если пользователь не авторизован, перенаправляем на страницу авторизации
-  if (!isLoading && !isAuthenticated) {
-    return <Navigate to="/auth" />;
-  }
 
   return (
     <div className="container py-10">
