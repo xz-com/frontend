@@ -14,7 +14,6 @@ export function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate({ to: "/auth" });
   };
 
   return (
