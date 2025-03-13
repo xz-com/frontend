@@ -12,7 +12,7 @@ import { AuthInitializer } from "./lib/auth-initializer";
 import { ThemeProvider } from "./components/theme-provider";
 
 // Create a new router instance
-const router = createRouter({
+export const router = createRouter({
   routeTree,
   context: {},
   defaultPreload: "intent",
