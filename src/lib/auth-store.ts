@@ -6,7 +6,6 @@ import {
 } from "./auth";
 import { toast } from "sonner";
 import { router } from "@/main";
-import { useNavigate } from "@tanstack/react-router";
 
 interface User {
   id: number;
