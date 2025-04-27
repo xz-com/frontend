@@ -15,7 +15,7 @@ function Home() {
   }
 
   return (
-    <div className="container py-10">
+    <div className="py-4">
       <h1 className="text-3xl font-bold mb-6">Добро пожаловать в Acme Inc.</h1>
       <p className="text-lg mb-4">
         Это защищенная страница, доступная только авторизованным пользователям.

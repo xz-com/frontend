@@ -9,7 +9,7 @@ function LayoutComponent() {
   return (
     <div className="flex min-h-svh flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 py-6 px-6">
         <Outlet />
       </main>
       <footer className="border-t py-6 md:py-0">

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/_layout/about")({
 
 function AboutPage() {
   return (
-    <div className="container py-10">
+    <div className="py-4">
       <h1 className="text-3xl font-bold mb-6">О нас</h1>
       <p className="text-lg mb-4">
         Acme Inc. - это инновационная компания, специализирующаяся на разработке

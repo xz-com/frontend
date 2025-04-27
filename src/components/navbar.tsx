@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { GalleryVerticalEnd, Menu, User, X } from "lucide-react";
 import { useState } from "react";
 import { useAuthStore } from "@/lib/auth-store";
@@ -10,7 +10,6 @@ export function Navbar() {
   const user = useAuthStore((state) => state.user);
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const logout = useAuthStore((state) => state.logout);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     logout();
@@ -18,11 +17,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+      <div className="flex h-14 px-6 items-center">
         <div className="mr-4 flex">
           <Link to="/" className="mr-6 flex items-center space-x-2">
             <GalleryVerticalEnd className="h-6 w-6" />
-            <span className="font-bold">Acme Inc.</span>
+            <span className="font-bold">XZ notes</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
             <Link to="/" className="transition-colors hover:text-foreground/80">
